@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='fr'>
+    <head>
+        <meta charset="utf-8">
+      
+        <title>
+            Placement des navires-en attente
+        </title>
+        
+        <link rel="stylesheet" href="style.css">
+        <script>src="game.js"</script>
+    </head>
+
+    <body>
+        <audio id ="attente" src="waiting.mp3" autoplay loop ></audio>
+        <div style="position: absolute;left: 50%;    top: 1%;">
+            <button onclick="playAudio()" class="violet bouton">></button>
+        </div>
+
+        <script>
+            function playAudio() {
+                var audio = document.getElementsByTagName("audio")[0];
+                audio.play();
+            }
+        </script>
+       
+        <div >
+            <a href="index.html" class=" bouton retour violet">Quiter</a>
+        </div>
+
+
+        <div style="position: absolute;left: 88%;    top: 1%;">
+            <a href="Placement.html" class="violet bouton">Retour au placement</a>
+        </div>
+        
+        
+
+
+
+
+        <div style="position: absolute;left: 97%;    top: 97%;transform: translate(-50%, -50%)">
+            <a href="game.html" class="violet bouton ">Jouer</a>
+        </div>
+            
+
+
+        <div style="position: absolute;left: 50%;    top: 20%;transform: translate(-50%, -50%)">
+                <h2> En attente de l'autre joueur, veuillez patienter</h2>
+        </div>
+        <div class="loader centré"></div> 
+    </body>
+</html>

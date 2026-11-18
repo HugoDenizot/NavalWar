@@ -1,0 +1,15 @@
+</div style ="position: absolute; left: 50%; top: 10%"; >
+    <div id="grilleAdversaire" class="grid"></div> 
+    <script>
+      var container2 = document.getElementById("grilleAdversaire");
+      for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+          var button = document.createElement("button");
+          button.classList.add("container", "water");
+          container.appendChild(button);
+        }
+      }
+      localStorage.setItem("buttonsContainercontent", container2.innerHTML);
+    </script>
+  </div>  
+

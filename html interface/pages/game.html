@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NavalWar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="game.js"></script>
+</head>
+
+<body>
+  <div >
+    <a href="index.html" class=" bouton retour violet">Quiter</a>
+  </div>
+
+<!--mini header-->
+  <h1 style="position: absolute; left: 40%";>Cliquez pour tirer</h1>
+
+<!--affichage de la grille -->
+  <div style="position: absolute;left: 15%; top: 10%;">
+    <h1>Votre grille</h1>
+
+
+    <!--remplissage de la grille avec les données -->
+    <div class="grid" id="buttonsContainer">
+      <script>
+        var container = document.getElementById("buttonsContainer");
+        var containerContent = localStorage.getItem("buttonsContainercontent");
+        if (containerContent) {
+          container.innerHTML = containerContent;
+        }
+      </script>
+
+
+    </div>
+  </div>
+
+
+
+
+
+  <div style="position: absolute;left: 55%; top: 10%;">
+    <h1>Joueur Adverse</h1>
+
+    <!--création d'une grille vide= vue de la map de l'adversaire  -->
+    <div class="grid" id="buttonsContainerad">
+      <script>
+        var container = document.getElementById("buttonsContainerad");
+        for (var i = 0; i < 10; i++) {
+          for (var j = 0; j < 10; j++) {
+            var button = document.createElement("button");
+            button.classList.add("container", "water");
+            var buttonId =  "p2"+i + ";" + j;
+            container.appendChild(button);
+          }
+        }
+        localStorage.setItem("buttonsContainercontentad", container.innerHTML);
+      </script>
+
+
+      <script>  //pour tirer rouge pour l'instant
+          var tableauAdversaire = document.getElementById("buttonsContainerad");
+          var adversaireButtons = tableauAdversaire.getElementsByTagName("button");
+          for (var i = 0; i < adversaireButtons.length; i++){
+              adversaireButtons[i].onclick = function() {
+                  this.style.backgroundColor = "red";
+                 //if (this.style.backgroundColor = "grey")  this.style.backgroundColor = "black";   pour l'instant ne marche pas 
+              }
+            }
+        </script>
+
+      
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='fr'>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="game.js"></script>
+
+        <title>
+            Placement des navires
+        </title>
+        
+    </head>
+
+    <body>
+
+      <h1 style="text-align: center;">veuillez placer vos navires</h1>
+   
+      <div>
+        <a class=" bouton violet" style="position: absolute;left: 45%; top: 40%;">Placer</a>
+        <a href="game.html" class=" bouton valider violet">Jouer</a>
+      </div>
+
+
+
+
+      <div style="position: absolute;left: 15%; top: 10%;">
+        <h1>Placez vos navires</h1>
+        <div id="buttonsContainer" class="grid"></div>
+          <script>
+            var container = document.getElementById("buttonsContainer");
+            for (var i = 0; i < 10; i++) {
+              for (var j = 0; j < 10; j++) {
+                var button = document.createElement("button");
+                button.classList.add("container", "water");
+                var buttonId =  i + ";" + j;
+                container.appendChild(button);
+              }
+            }
+            localStorage.setItem("buttonsContainercontent", container.innerHTML);
+          </script>
+          
+      
+ 
+      </div>
+
+      <script> // pour placer des bateaux 
+        var buttons = document.getElementsByClassName("container");
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].onclick = function() {
+            this.style.backgroundColor = "grey";
+            localStorage.setItem(this.id, this.getAttribute("style"));
+          };
+        }
+      </script>
+  
+    
+
+        <a href="../index.html" class=" bouton retour violet">Quiter</a>
+      </div>
+    </body>
+</html>

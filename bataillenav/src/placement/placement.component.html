@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='fr'>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="placement.component.css">
+     
+
+        <title>
+            Placement des navires
+        </title>
+        
+    </head>
+
+    <body>
+
+      <h1 style="text-align: center;">veuillez placer vos navires</h1>
+   
+      <div>
+        <a class=" bouton violet" style="position: absolute;left: 45%; top: 40%;">Placer</a>
+        <a routerLink="/game" class=" bouton valider violet">Jouer</a>
+      </div>
+
+
+          <div style="position: absolute;left: 15%; top: 10%;">
+            <h1>Placez vos navires</h1>
+            <div id="buttonsContainer" class="grid"></div>
+          </div>
+          <button *ngFor="let buttonId of buttonIds" id="{{ buttonId }}" class="container water" (click)="onButtonClick(buttonId)"></button>
+
+
+
+
+        <a routerLink="/" class=" bouton retour violet">Quiter</a>
+      
+    </body>
+</html>
